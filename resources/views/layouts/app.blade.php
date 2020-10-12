@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -79,7 +79,7 @@
                 @if (isset(Auth::user()->role->name))
                     <li class="nav-item">
                         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
-                                class="fa fa-th-large"></i></a>
+                                class="fa fa-sort-down"></i></a>
                     </li>
                 @endif
 

@@ -68,6 +68,18 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Movie');
     }
 
+    public function export($module)
+    {
+        if(\Auth::user()->role->name === 'Administrador')
+            return 'admin/' . $module . '/export';
+    }
+
+    public function import($module)
+    {
+        if(\Auth::user()->role->name === 'Administrador')
+            return 'admin/' . $module . '/import';
+    }
+
     public function urlAll($module)
     {
         if (\Auth::user()->role->name === 'Administrador')

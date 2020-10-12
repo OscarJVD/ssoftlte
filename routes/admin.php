@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('movie', ['as'=> 'movie.index', 'uses' => 'MovieController@index']);
+Route::get('users/export/', 'UserController@export');
+Route::post('users/import/', 'UserController@import');
+Route::post('users/import', 'UserController@import')->name('users.import.excel');
+
+Route::get('alumnos/import','AlumnoController@importForm')->name('alumnos.importForm');
+Route::post('alumnos/import','AlumnoController@import')->name('alumnos.import');
 
 Route::resource('movie', 'MovieController');
 Route::get('movie/destroy/{id}', ['as' => 'movie/destroy', 'uses' => 'MovieController@destroy']);
