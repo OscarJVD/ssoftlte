@@ -104,6 +104,4 @@
     </div>
     <!-- /.content-wrapper -->
 
-
-@endsection
-@extends('layouts.footer')
+    @endsection

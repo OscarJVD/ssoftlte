@@ -2,7 +2,7 @@
     <!-- <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/home') }}">{{ __('Inicio') }}</a>
     </li> -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/movie') }}">{{ __('Películas') }}</a>
     </li>
     <li class="nav-item">
@@ -13,14 +13,14 @@
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/category') }}">{{ __('Categorías') }}</a>
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/role') }}">{{ __('Roles') }}</a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/status') }}">{{ __('Estados') }}</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{{ url('admin/type_status') }}">{{ __('Tipos de estado') }}</a>
-    </li>
+    </li> --}}
 </ul>
