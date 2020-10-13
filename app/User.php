@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     /**
      * Class constructor.
@@ -119,20 +119,9 @@ class User extends Authenticatable
             return 'employee/' . $module . '/' . $id . '/edit';
         if($module == 'rental' && \Auth::user()->role->name === 'Cliente')
             return 'client/' . $module . '/' . $id . '/edit';
-
     }
 
-    // public function urlUpdate($module, $id)
-    // {
-    //     if (\Auth::user()->role->name === 'Administrador')
-    //         return 'admin/' . $module . '/update/' . $id;
-    //     if (\Auth::user()->role->name === 'Empleado')
-    //         return 'employee/' . $module . '/update/' . $id;
-    //     if($module == 'rental' && \Auth::user()->role->name === 'Cliente')
-    //         return 'client/' . $module . '/update/' . $id;
-    // }
-
-    public function urlUpdateP($module, $id)
+    public function urlUpdate($module, $id)
     {
         if (\Auth::user()->role->name === 'Administrador')
             return 'admin/' . $module . '/update/' . $id;
@@ -142,7 +131,25 @@ class User extends Authenticatable
             return 'client/' . $module . '/update/' . $id;
     }
 
+    public function urlUpdateStatus($module, $id)
+    {
+        if (\Auth::user()->role->name === 'Administrador')
+            return 'admin/' . $module . '/updateStatus/' . $id;
+        if (\Auth::user()->role->name === 'Empleado')
+            return 'employee/' . $module . '/updateStatus/' . $id;
+        if($module == 'rental' && \Auth::user()->role->name === 'Cliente')
+            return 'client/' . $module . '/updateStatus/' . $id;
+    }
 
+    // public function urlUpdateP($module, $id)
+    // {
+    //     if (\Auth::user()->role->name === 'Administrador')
+    //         return 'admin/' . $module . '/update/' . $id;
+    //     if (\Auth::user()->role->name === 'Empleado')
+    //         return 'employee/' . $module . '/update/' . $id;
+    //     if($module == 'rental' && \Auth::user()->role->name === 'Cliente')
+    //         return 'client/' . $module . '/update/' . $id;
+    // }
 
     public function urlDelete($module, $id)
     {

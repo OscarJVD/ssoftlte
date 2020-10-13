@@ -13,7 +13,7 @@
                         </div>
                     @endif
 
-                    {{ __('Bienvenid@ a Solupelis') }}
+                    {{ __('Bienvenid@ a senasoft') }}
                     <p>Donde podras administrar toda tu información de películas de forma segura</p>
                 </div>
             </div>

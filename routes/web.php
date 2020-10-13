@@ -19,13 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
+Auth::routes(['verify' => true]);
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-    Route::post('users/import', 'UserController@import')->name('users.import.excel');
 
 

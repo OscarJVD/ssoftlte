@@ -17,22 +17,11 @@ class UserController extends Controller
     public function import(Request $request)
     {
         try {
-
-                // dd($request->file());
-            // $path1 = $request->file('mcafile')->store('users.xlsx');
-            // $file = storage_path('app') . '/' . $path1;
-            // $request->file('file');
             $file = $request->file('file');
             Excel::import(new UsersImport, $file);
-
-            // $path1 = $this->request->file('file')->store('temp');
-            // $path = storage_path('app') . '/' . $path1;
-            // $data = \Excel::import(new UsersImport, $path);
-            // \Excel::import(new UsersImport, $request->file('users.xlsx'));
             return back()->with('message', "Importación exitosa :D");
         } catch (NoTypeDetectedException $e) {
             dd($e);
-            // return Redirect::back();
         }
     }
 
@@ -43,7 +32,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::where('status_id', 1)->get();
         return \View::make('users/list', compact('users'));
     }
 
@@ -96,6 +85,19 @@ class UserController extends Controller
         $user->password = $request->password;
         $user->status_id = $request->status;
         $user->role_id = $request->role;
+        $user->save();
+        return redirect(\Auth::user()->urlAll('user'));
+    }
+
+    public function updateStatus($id, Request $request) // delete user
+    {
+        $user              = User::find($id);
+
+        if ($request->status == 1)
+            $user->status_id   = 2;
+        elseif ($request->status == 2)
+            $user->status_id   = 1;
+
         $user->save();
         return redirect(\Auth::user()->urlAll('user'));
     }

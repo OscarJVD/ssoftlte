@@ -15,7 +15,6 @@ class UsersImport implements ToModel
      */
     public function model(array $row)
     {
-        // dd($row);
 
         foreach ($row as $r) {
             if (!empty($r)) {

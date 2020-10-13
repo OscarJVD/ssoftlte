@@ -24,11 +24,11 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
    with font-awesome or any other icon font library -->
-                <li class="nav-item has-treeview menu-open">
+                {{-- <li class="nav-item has-treeview menu-open">
                     <a href="#" class="nav-link active">
                         <i class="nav-icon fa fa-tachometer-alt"></i>
                         <p>
-                            Starter Pages
+                            Usuarios
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
@@ -46,21 +46,26 @@
                             </a>
                         </li>
                     </ul>
+                </li> --}}
+                <li class="nav-item">
+                    <a href="{{ url('admin/user') }}" class="nav-link">
+                        <i class="nav-icon fa fa-user"></i>
+                        <p>
+                            Usuarios
+                        </p>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-th"></i>
+                    <a href="{{ url('admin/role') }}" class="nav-link">
+                        <i class="nav-icon fa fa-address-book"></i>
                         <p>
-                            Simple Link
-                            <span class="right badge badge-danger">New</span>
+                            Roles
                         </p>
                     </a>
                 </li>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
 
 

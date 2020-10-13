@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name_2', 'Solupelis') }}</title>
+    <title>{{ config('app.name_2', 'senasoft') }}</title>
 
     <!-- Scripts -->
     <link href="{{ asset('./css/app.css') }}" rel="stylesheet">
@@ -31,7 +31,7 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 @if (isset(Auth::user()->role->name))
-                    <li class="nav-item">
+                    <li class="nav-item mx-2 mr-4">
                         <a class="nav-link navColorText" data-widget="pushmenu" href="#" role="button">
                             <i class="fa fa-bars"></i>
                         </a>
@@ -44,7 +44,7 @@
                     <span class="navbar-toggler-icon navColorText"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name_2', 'Solupelis') }}
+                    {{ config('app.name_2', 'senasoft') }}
                 </a>
                 <!-- Authentication Links -->
                 @guest
@@ -107,7 +107,7 @@
                 @endif
             @endguest
 
-            <main class="py-4">
+            <main class="my-4">
                 @yield('content')
             </main>
 

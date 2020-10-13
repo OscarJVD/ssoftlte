@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Solupelis</title>
+        <title>senasoft</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -81,13 +81,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Solupelis
+                    Senasoft
                 </div>
 
                 <div class="links">
-                    <a href="">Estrenos</a>
+                    {{-- <a href="">Estrenos</a>
                     <a href="">Clasicas</a>
-                    <a href="">Marvel</a>
+                    <a href="">Marvel</a> --}}
                     <!-- <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
