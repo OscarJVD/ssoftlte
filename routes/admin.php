@@ -14,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('movie', ['as'=> 'movie.index', 'uses' => 'MovieController@index']);
-Route::get('users/export/', 'UserController@export');
-Route::post('users/import', 'UserController@import')->name('users.import.excel');
 
 Route::resource('movie', 'MovieController');
 Route::get('movie/destroy/{id}', ['as' => 'movie/destroy', 'uses' => 'MovieController@destroy']);
@@ -36,7 +34,13 @@ Route::resource('user', 'UserController');
 Route::get('user/destroy/{id}', ['as' => 'user/destroy', 'uses' => 'UserController@destroy']);
 Route::post('user/show', ['as' => 'user/show', 'uses' => 'UserController@show']);
 Route::post('user/update/{id}', ['as' => 'user/update', 'uses' => 'UserController@update']);
+
 Route::post('user/updateStatus/{id}', ['as' => 'user/updateStatus', 'uses' => 'UserController@updateStatus']);
+
+Route::get('users/export/', 'UserController@export');
+Route::post('users/import', 'UserController@import')->name('users.import.excel');
+
+Route::get('users/pdf', 'UserController@pdf')->name('users.pdf');
 
 Route::resource('status', 'StatusController');
 Route::get('status/destroy/{id}', ['as' => 'status/destroy', 'uses' => 'StatusController@destroy']);

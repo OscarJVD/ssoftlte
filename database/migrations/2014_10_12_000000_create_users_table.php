@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('status_id')->unsigned();
             $table->integer('role_id')->unsigned();
             $table->dateTime('last_login')->nullable();
+            $table->string('token_login')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -107,7 +107,7 @@
                 @endif
             @endguest
 
-            <main class="my-4">
+            <main class="py-4">
                 @yield('content')
             </main>
 

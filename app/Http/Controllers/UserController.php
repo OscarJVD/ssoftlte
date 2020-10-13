@@ -10,10 +10,23 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use App\Exports\UsersExport;
 use Maatwebsite\Excel\Exceptions\NoTypeDetectedException;
-
+use Barryvdh\DomPDF\Facade as PDF;
 
 class UserController extends Controller
 {
+    public function pdf()
+    {
+        /**
+         * toma en cuenta que para ver los mismos
+         * datos debemos hacer la misma consulta
+         **/
+        $users = User::all();
+
+        $pdf = PDF::loadView('pdf.users', compact('users'));
+
+        return $pdf->download('listado.pdf');
+    }
+
     public function import(Request $request)
     {
         try {

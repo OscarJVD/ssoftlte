@@ -14,7 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-    'name_2' => env('APP_NAME_2', 'Solupelis'),
+    'name_2' => env('APP_NAME_2', 'Senasoft'),
 
 
     /*
@@ -138,6 +138,8 @@ return [
 
     'providers' => [
 
+        Barryvdh\DomPDF\ServiceProvider::class,
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -191,6 +193,8 @@ return [
     */
 
     'aliases' => [
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
